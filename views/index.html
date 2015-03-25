@@ -6,8 +6,18 @@
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="js/angularApp.js"></script>
   <script src="js/streamController.js"></script>
+  <script src="js/addLinkCtrl.js"></script>
 </head>
 <body>
+  <div ng-controller="addLinkCtrl">
+    <form>
+    <input type="text" ng-model="inputLink" id="addlink"/>
+    <button type="submit" ng-click="addLink()" id="submitButton">Add</button>
+  </form>
+    <ul>
+      <li ng-repeat="link in links">{{link}}</li>
+    </ul>
+  </div>
   <div class="stream" ng-controller="streamController">
     <ul>
       <li class="items" ng-model="card">
