@@ -11,7 +11,8 @@ describe('blogbook homepage', function() {
 
   it('should show a blog post', function() {
     browser.get('http://localhost:3000/');
-    expect(element(by.binding('card.Title')).getText()).toBe("Hello World")
+    element(by.id('start-api')).click();
+    expect(element(by.binding('card.title')).getText()).toBe("This April in Blogging U.: The Return of Writing 101!")
   });
 
   it("should take a link", function() {

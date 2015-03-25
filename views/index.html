@@ -12,7 +12,7 @@
   <div ng-controller="addLinkCtrl">
     <form>
     <input type="text" ng-model="inputLink" id="addlink"/>
-    <button type="submit" ng-click="addLink()" id="submitButton">Add</button>
+    <button type="submit" ng-click="addLink(inputLink)" id="submitButton">Add</button>
   </form>
     <ul>
       <li ng-repeat="link in links">{{link}}</li>
@@ -21,7 +21,7 @@
   <div class="stream" ng-controller="streamController">
     <ul>
       <li class="items" ng-model="card">
-        <button type="submit" ng-click="callAPI()">test</button>
+        <button id="start-api" type="submit" ng-click="callAPI()">test</button>
         <h1>{{card.title}}</h1>
         <p>by {{card.author}}</p>
         <p>on {{sample.posts[0].date}}</p>
