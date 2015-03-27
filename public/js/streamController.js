@@ -38,9 +38,9 @@ var streamController = function($scope, WPCard) {
     $scope.filters = {author: $scope.cards[index].author}
   };
 
-  angular.element(document).ready(function() {
+  // angular.element(document).ready(function() {
     $scope.fillPage();
-  });
+  // });
 
 };
 

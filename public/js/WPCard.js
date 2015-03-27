@@ -6,12 +6,13 @@ var wrapper = function($http){
       var self = this;
 
       blogData.then(function(response){
-        self.title = response.data.posts[index].title
-        self.date = new Date(response.data.posts[index].date).toDateString();
-        self.text = response.data.posts[index].excerpt.replace(/(<([^>]+)>)/ig,"");
-        self.link = response.data.posts[index].URL
-        self.author = response.data.posts[index].author.nice_name
-        self.photo = response.data.posts[index].featured_image || response.data.posts[index].attachments[Object.keys(response.data.posts[index].attachments)[0]].URL || ""
+        var blogPostData = response.data.posts[index]
+        self.title = blogPostData.title
+        self.date = new Date(blogPostData.date).toDateString();
+        self.text = blogPostData.excerpt.replace(/(<([^>]+)>)/ig,"");
+        self.link = blogPostData.URL
+        self.author = blogPostData.author.nice_name
+        self.photo = blogPostData.featured_image || blogPostData.attachments[Object.keys(blogPostData.attachments)[0]].URL || ""
       });
     };
     this.initialize();
